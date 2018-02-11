@@ -1,7 +1,11 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = OrderItem.all
+    @delivery_orders = DeliveryOrder.all
+  end
+
+  def show
+    @delivery_order = DeliveryOrder.find(params[:id])
   end
 
 end
