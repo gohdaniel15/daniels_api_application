@@ -25,14 +25,17 @@ gem 'puma', '~> 3.7'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+# Faker refactored.
+gem 'ffaker'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
-  # RSpec for Rails 3+ 
+  # RSpec for Rails 3+
   gem 'rspec-rails', '~> 3.7'
 
-  # Collection of testing matchers extracted from Shoulda 
+  # Collection of testing matchers extracted from Shoulda
   gem 'shoulda-matchers', '~> 3.1'
 end
 
