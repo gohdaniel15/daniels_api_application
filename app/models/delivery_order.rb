@@ -13,7 +13,7 @@ class DeliveryOrder < ApplicationRecord
     distance_from_begin_hour = (date - date.beginning_of_hour) * 24 * 60
     ampm = date.strftime("%p")
 
-    if date >= 30
+    if distance_from_begin_hour >= 30
       "#{date.hour}:30-#{date.hour + 1}:00#{ampm}"
     else
       "#{date.hour}:00-#{date.hour}:30#{ampm}"

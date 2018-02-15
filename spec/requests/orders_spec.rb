@@ -4,7 +4,12 @@ RSpec.describe 'Orders API', type: :request do
 
   let(:meal) { create(:meal) }
   let(:delivery_order) { create(:delivery_order) }
-  let!(:order_item) { create(:order_item, delivery_order: delivery_order, meal: meal) }
+  let!(:order_item) do
+    create(:order_item,
+      delivery_order: delivery_order,
+      meal: meal
+    )
+  end
 
   describe 'GET /orders' do
     before { get orders_path, xhr: true }
@@ -24,6 +29,10 @@ RSpec.describe 'Orders API', type: :request do
 
     it 'returns a delivery order' do
       expect(json).to include('id' => delivery_order.id)
+    end
+
+    it 'returns status code 200' do
+      expect(response).to have_http_status(200)
     end
   end
 
